@@ -1,0 +1,36 @@
+<html>
+<head>
+<title> Second page </title>
+<script>
+var data= window.location.search;
+var params=new URLSearchParams(data);
+var fname=params.get("fname");
+var bname=params.get("bname");
+var issue=params.get("issue");
+var subject=params.get("subject");
+var getData= "fname:"+fname+"<br/>";
+    getData= "bname:"+bname+"<br/>";
+	getData= "issue:"+issue+"<br/>";
+	getData= "Description:"+subject+"<br/>";
+document.getElementById("conf").innerHTML=data;
+</script>
+
+<head>
+<body>
+<h1> Confirmation page </h1>
+
+<p id="conf"></p>
+<script>
+var msg=window.confirm("check submitted data is correct or not");
+if(msg)
+{
+location.replace("localhost:80/Afreen/3p2.html");
+}
+else
+{
+document.getElementById("thanks").innerHTML="we will get back to you soon,thank you";
+}
+</script>
+<p id="thanks"></p>
+</body>
+</html> 
